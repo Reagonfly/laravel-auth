@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illminate\Support\Str;
+use Illuminate\Support\Str;
 
 class Post extends Model
 {

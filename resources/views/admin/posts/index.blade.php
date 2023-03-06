@@ -5,16 +5,21 @@
         <div class="col-10 my-4">
             <div class="d-flex justify-content-evenly">
                 <div>
-                    <h3>Elenco Post</h3>
+                    <h2 class="text-primary"><strong>Post Index</strong></h2>
                 </div>
                 <div>
                     <a href="{{ route('admin.posts.create') }}" class="btn btn-sm btn-secondary">Add New Post</a>
                 </div>
             </div>
         </div>
-        <div class="table table-striped">
-            <table>
-                <thead>
+        @if(session('message'))
+        <div class="alert alert-primary">
+            {{ session('message') }}
+        </div>
+        @endif
+        <div class="col-12">
+            <table class="table table-striped">
+                <thead class="text-danger">
                     <th>Id</th>
                     <th>Title</th>
                     <th>Slug</th>
@@ -23,7 +28,7 @@
                 <tbody>
                     @foreach ($posts as $post)
                     <tr>
-                        <th>{{$post->id}}</th>
+                        <th class="text-success">{{$post->id}}</th>
                         <th>{{$post->title}}</th>
                         <th>{{$post->slug}}</th>
                         <th>
